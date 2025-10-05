@@ -2,171 +2,258 @@
 <html lang="id">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Saya</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Saya</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="min-h-screen py-8 px-4 sm:px-8">
+<body class="min-h-screen py-8 px-4 sm:px-8 transition-all duration-300">
 
-    <div id="intro-screen" class="fixed inset-0 flex flex-col items-center justify-center bg-black z-[9999]">
-        <h1 class="text-4xl sm:text-6xl font-bold mb-10 gold-gradient-text">Mini Project</h1>
-        <button id="enter-btn" class="shiny-btn px-8 py-3 text-lg font-semibold rounded-full">
-            Masuk
-        </button>
+  <!-- Intro screen
+  <div id="intro-screen" class="fixed inset-0 flex flex-col items-center justify-center bg-black z-[9999]">
+    <h1 class="text-4xl sm:text-6xl font-bold mb-10 gold-gradient-text">Mini Project</h1>
+    <button id="enter-btn" class="shiny-btn px-8 py-3 text-lg font-semibold rounded-full">
+      Masuk
+    </button>
+  </div> -->
+
+  <nav class="navbar">
+    <div class="navbar-container">
+      <ul class="nav-links">
+        <li><a href="#tentang"><i data-feather="user"></i> Tentang Saya</a></li>
+        <li><a href="#pendidikan"><i data-feather="book"></i> Pendidikan</a></li>
+        <li><a href="#keahlian"><i data-feather="award"></i> Keahlian</a></li>
+        <li><a href="#kontak"><i data-feather="mail"></i> Kontak</a></li>
+        <li><a href="#sosmed"><i data-feather="share-2"></i> Sosial Media</a></li>
+      </ul>
+      <div class="mode-toggle">
+        <span>Mode</span>
+        <label class="theme-switch">
+          <input type="checkbox" id="theme-toggle">
+          <span class="slider"></span>
+        </label>
+      </div>
     </div>
-
-    <div class="max-w-4xl mx-auto">
-
-        <!-- navigasi -->
-        <nav class="mb-12">
-            <ul class="flex flex-wrap justify-center gap-6 sm:gap-10">
-                <li><a href="#about" class="nav-link text-lg font-medium flex items-center gap-2"><i data-feather="user"
-                            class="icon-gold"></i> Tentang Saya</a></li>
-                <li><a href="#education" class="nav-link text-lg font-medium flex items-center gap-2"><i
-                            data-feather="book" class="icon-gold"></i> Pendidikan</a></li>
-                <li><a href="#skills" class="nav-link text-lg font-medium flex items-center gap-2"><i
-                            data-feather="award" class="icon-gold"></i> Keahlian</a></li>
-                <li><a href="#contact" class="nav-link text-lg font-medium flex items-center gap-2"><i
-                            data-feather="mail" class="icon-gold"></i> Kontak</a></li>
-                <li>
-                    <a href="#hobbies" class="nav-link text-lg font-medium flex items-center gap-2">
-                        <i data-feather="star" class="icon-gold"></i> Hobi
-                    </a>
-                </li>
-
-            </ul>
-        </nav>
-
-        <!-- head -->
-        <header class="text-center mb-16" data-aos="fade-down">
-            <div class="flex flex-col items-center">
-                <div class="w-40 h-40 mb-6 rounded-full overflow-hidden border-4 border-amber-500 shadow-lg">
-                    <img src="kocegg.png" alt="Foto Profil" class="w-full h-full object-cover">
-                </div>
-                <h1 class="text-4xl sm:text-5xl font-bold mb-4 gold-gradient-text">Profil Saya</h1>
-                <div class="w-24 h-1 bg-gradient-to-r from-amber-600 to-amber-300 mx-auto"></div>
-            </div>
-        </header>
-
-        <!-- tentang -->
-        <section id="about" class="section-card p-6 mb-12" data-aos="fade-right">
-            <div class="flex items-center gap-4 mb-4">
-                <i data-feather="user" class="icon-gold w-8 h-8"></i>
-                <h2 class="text-2xl font-semibold gold-gradient-text">Tentang Saya</h2>
-            </div>
-            <p class="text-amber-100">Halo, nama saya <span class="font-bold text-amber-300">Fredy(12524032)</span>.
-                Saya
-                seorang
-                pelajar/mahasiswa yang mempelajari teknologi dan pengembangan web.</p>
-
-            <div class="gallery">
-                <img src="kocegg.png" alt="Foto 1" onclick="openLightbox(this.src)">
-                <img src="kocegg.png" alt="Foto 2" onclick="openLightbox(this.src)">
-                <img src="kocegg.png" alt="Foto 3" onclick="openLightbox(this.src)">
-                <img src="kocegg.png" alt="Foto 4" onclick="openLightbox(this.src)">
-            </div>
-
-        </section>
+  </nav>
 
 
+  <div class="max-w-4xl mx-auto pt-32">
 
-        <!-- pendidikan -->
-        <section id="education" class="section-card p-6 mb-12" data-aos="fade-right">
-            <div class="flex items-center gap-4 mb-4">
-                <i data-feather="book" class="icon-gold w-8 h-8"></i>
-                <h2 class="text-2xl font-semibold gold-gradient-text">Pendidikan</h2>
-            </div>
-            <ul class="space-y-3 pl-2">
-                <li class="flex items-start gap-3 text-amber-100"><i data-feather="chevron-right"
-                        class="icon-gold w-5 h-5 mt-0.5"></i><span>Sekolah Dasar 1</span></li>
-                <li class="flex items-start gap-3 text-amber-100"><i data-feather="chevron-right"
-                        class="icon-gold w-5 h-5 mt-0.5"></i><span>SMP 2</span></li>
-                <li class="flex items-start gap-3 text-amber-100"><i data-feather="chevron-right"
-                        class="icon-gold w-5 h-5 mt-0.5"></i><span>SMK 3</span></li>
-                <li class="flex items-start gap-3 text-amber-100"><i data-feather="chevron-right"
-                        class="icon-gold w-5 h-5 mt-0.5"></i><span>UNIV 4</span></li>
-            </ul>
-        </section>
+    <header class="text-center mb-16" data-aos="fade-down">
+      <div class="flex flex-col items-center">
+        <div class="w-40 h-40 mb-6 rounded-full overflow-hidden border-4 border-amber-500 shadow-lg">
+          <img src="kocegg.png" alt="Foto Profil" class="w-full h-full object-cover">
+        </div>
+        <h1 class="text-4xl sm:text-5xl font-bold mb-4 gold-gradient-text">Profil Saya</h1>
+        <div class="w-24 h-1 bg-gradient-to-r from-amber-600 to-amber-300 mx-auto"></div>
+      </div>
+    </header>
 
-        <!-- skill -->
-        <section id="skills" class="section-card p-6 mb-12" data-aos="fade-left">
-            <div class="flex items-center gap-4 mb-4">
-                <i data-feather="award" class="icon-gold w-8 h-8"></i>
-                <h2 class="text-2xl font-semibold gold-gradient-text">Keahlian</h2>
-            </div>
-            <ul class="space-y-3 pl-2">
-                <li class="flex items-start gap-3 text-amber-100"><i data-feather="code"
-                        class="icon-gold w-5 h-5 mt-0.5"></i><span>Bahasa Pemrograman: Masih belajar</span></li>
-                <li class="flex items-start gap-3 text-amber-100"><i data-feather="layout"
-                        class="icon-gold w-5 h-5 mt-0.5"></i><span>Desain sederhana dengan HTML</span></li>
-                <li class="flex items-start gap-3 text-amber-100"><i data-feather="cpu"
-                        class="icon-gold w-5 h-5 mt-0.5"></i><span>Dev Newbie</span></li>
-            </ul>
-        </section>
+    <section id="tentang" class="section-card p-6 mb-12" data-aos="fade-right">
+      <h2 class="flex items-center gap-3 text-2xl font-semibold gold-gradient-text mb-4"><i data-feather="user"></i>
+        Tentang Saya</h2>
+      <p>
+        Halo, nama saya <b>Fredy (12524032)</b>. Saya seorang pelajar/mahasiswa yang mempelajari teknologi dan
+        pengembangan web.
+        Halo, nama saya <b>Fredy (12524032)</b>. Saya seorang pelajar/mahasiswa yang mempelajari teknologi dan
+        pengembangan web
+        Halo, nama saya <b>Fredy (12524032)</b>. Saya seorang pelajar/mahasiswa yang mempelajari teknologi dan
+        pengembangan web
+        Halo, nama saya <b>Fredy (12524032)</b>. Saya seorang pelajar/mahasiswa yang mempelajari teknologi dan
+        pengembangan web
+        Halo, nama saya <b>Fredy (12524032)</b>. Saya seorang pelajar/mahasiswa yang mempelajari teknologi dan
+        pengembangan web
+        Halo, nama saya <b>Fredy (12524032)</b>. Saya seorang pelajar/mahasiswa yang mempelajari teknologi dan
+        pengembangan web
+        Halo, nama saya <b>Fredy (12524032)</b>. Saya seorang pelajar/mahasiswa yang mempelajari teknologi dan
+        pengembangan web
+        Halo, nama saya <b>Fredy (12524032)</b>. Saya seorang pelajar/mahasiswa yang mempelajari teknologi dan
+        pengembangan web
+        Halo, nama saya <b>Fredy (12524032)</b>. Saya seorang pelajar/mahasiswa yang mempelajari teknologi dan
+        pengembangan web
+        Halo, nama saya <b>Fredy (12524032)</b>. Saya seorang pelajar/mahasiswa yang mempelajari teknologi dan
+        pengembangan web
+        Halo, nama saya <b>Fredy (12524032)</b>. Saya seorang pelajar/mahasiswa yang mempelajari teknologi dan
+        pengembangan web
+        Halo, nama saya <b>Fredy (12524032)</b>. Saya seorang pelajar/mahasiswa yang mempelajari teknologi dan
+        pengembangan web
+        Halo, nama saya <b>Fredy (12524032)</b>. Saya seorang pelajar/mahasiswa yang mempelajari teknologi dan
+        pengembangan web
+        Halo, nama saya <b>Fredy (12524032)</b>. Saya seorang pelajar/mahasiswa yang mempelajari teknologi dan
+        pengembangan web
+        Halo, nama saya <b>Fredy (12524032)</b>. Saya seorang pelajar/mahasiswa yang mempelajari teknologi dan
+        pengembangan web
+        Halo, nama saya <b>Fredy (12524032)</b>. Saya seorang pelajar/mahasiswa yang mempelajari teknologi dan
+        pengembangan web
+        Halo, nama saya <b>Fredy (12524032)</b>. Saya seorang pelajar/mahasiswa yang mempelajari teknologi dan
+        pengembangan web
+        Halo, nama saya <b>Fredy (12524032)</b>. Saya seorang pelajar/mahasiswa yang mempelajari teknologi dan
+        pengembangan web<br>
+        <br>Maaf kalo terlalu panjang, biar kelihatan pergantian navbarnya:D
+      </p>
+      <div class="swiper mySwiper mt-6">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="kocegg.png" /></div>
+          <div class="swiper-slide"><img src="kocegg2.png" /></div>
+          <div class="swiper-slide"><img src="kocegg3.png" /></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
 
-        <!-- hobi & minat -->
-        <section id="hobbies" class="section-card p-6 mb-12" data-aos="fade-up">
-            <div class="flex items-center gap-4 mb-4">
-                <i data-feather="star" class="icon-gold w-8 h-8"></i>
-                <h2 class="text-2xl font-semibold gold-gradient-text">Hobi</h2>
-            </div>
-            <ul class="space-y-3 pl-2">
-                <li class="flex items-start gap-3 text-amber-100">
-                    <i data-feather="music" class="icon-gold w-5 h-5 mt-0.5"></i>
-                    <span>Main Osu</span>
-                </li>
-                <li class="flex items-start gap-3 text-amber-100">
-                    <i data-feather="tv" class="icon-gold w-5 h-5 mt-0.5"></i>
-                    <span>Nonton Youtube</span>
-                </li>
-            </ul>
-        </section>
+    </section>
 
-        <!-- kontak -->
-        <section id="contact" class="section-card p-6 mb-12" data-aos="fade-left">
-            <div class="flex items-center gap-4 mb-4">
-                <i data-feather="mail" class="icon-gold w-8 h-8"></i>
-                <h2 class="text-2xl font-semibold gold-gradient-text">Kontak</h2>
-            </div>
-            <div class="space-y-3">
-                <p class="flex items-center gap-3 text-amber-100">
-                    <i data-feather="mail" class="icon-gold w-5 h-5"></i>
-                    <a href="#" class="hover:text-amber-300 transition-colors">Fededed@gmla.com</a>
-                </p>
-                <p class="flex items-center gap-3 text-amber-100">
-                    <i data-feather="phone" class="icon-gold w-5 h-5"></i>
-                    <span>Telepon: +62 999-9999-9999</span>
-                </p>
-            </div>
+    <section id="pendidikan" class="section-card p-6 mb-12" data-aos="fade-left">
+      <h2 class="flex items-center gap-3 text-2xl font-semibold gold-gradient-text mb-4"><i data-feather="book"></i>
+        Pendidikan</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>SDN 1</li>
+        <li>SMP 2</li>
+        <li>SMK 3</li>
+        <li>Universitas</li>
+        <li>SDN 1</li>
+        <li>SMP 2</li>
+        <li>SMK 3</li>
+        <li>Universitas</li>
+        <li>SDN 1</li>
+        <li>SMP 2</li>
+        <li>SMK 3</li>
+        <li>Universitas</li>
+        <li>SDN 1</li>
+        <li>SMP 2</li>
+        <li>SMK 3</li>
+        <li>Universitas</li>
+        <li>SDN 1</li>
+        <li>SMP 2</li>
+        <li>SMK 3</li>
+        <li>Universitas</li>
+        <li>SDN 1</li>
+        <li>SMP 2</li>
+        <li>SMK 3</li>
+        <li>Universitas</li>
+        <li>SDN 1</li>
+        <li>SMP 2</li>
+        <li>SMK 3</li>
+        <li>Universitas</li>
+        <li>SDN 1</li>
+        <li>SMP 2</li>
+        <li>SMK 3</li>
+        <li>Universitas</li>
+        <li>SDN 1</li>
+        <li>SMP 2</li>
+        <li>SMK 3</li>
+        <li>Universitas</li>
+        <li>SDN 1</li>
+        <li>SMP 2</li>
+        <li>SMK 3</li>
+        <li>Universitas</li>
+        <li>SDN 1</li>
+        <li>SMP 2</li>
+        <li>SMK 3</li>
+        <li>Universitas</li><br>
+        <li>Maaf kalo terlalu panjang, biar kelihatan pergantian navbarnya:D</li>
+      </ul>
+    </section>
 
-            <!-- sosmed -->
-            <div class="social-buttons">
-                <a href="https://facebook.com" class="social-btn" title="Facebook"><i data-feather="facebook"></i></a>
-                <a href="https://instagram.com" class="social-btn" title="Instagram"><i
-                        data-feather="instagram"></i></a>
-                <a href="https://github.com" class="social-btn" title="GitHub"><i data-feather="github"></i></a>
-                <a href="https://linkedin.com" class="social-btn" title="LinkedIn"><i data-feather="linkedin"></i></a>
-            </div>
-        </section>
+    <section id="keahlian" class="section-card p-6 mb-12" data-aos="fade-up">
+      <h2 class="flex items-center gap-3 text-2xl font-semibold gold-gradient-text mb-4"><i data-feather="award"></i>
+        Keahlian</h2>
+      <p>HTML, CSS, JavaScript, dan ?.</p>
+      <p>HTML, CSS, JavaScript, dan ?.</p>
+      <p>HTML, CSS, JavaScript, dan ?.</p>
+      <p>HTML, CSS, JavaScript, dan ?.</p>
+      <p>HTML, CSS, JavaScript, dan ?.</p>
+      <p>HTML, CSS, JavaScript, dan ?.</p>
+      <p>HTML, CSS, JavaScript, dan ?.</p>
+      <p>HTML, CSS, JavaScript, dan ?.</p>
+      <p>HTML, CSS, JavaScript, dan ?.</p>
+      <p>HTML, CSS, JavaScript, dan ?.</p>
+      <p>HTML, CSS, JavaScript, dan ?.</p>
+      <p>HTML, CSS, JavaScript, dan ?.</p>
+      <p>HTML, CSS, JavaScript, dan ?.</p>
+      <p>HTML, CSS, JavaScript, dan ?.</p>
+      <p>HTML, CSS, JavaScript, dan ?.</p>
+      <p>HTML, CSS, JavaScript, dan ?.</p>
+      <p>HTML, CSS, JavaScript, dan ?.</p>
+      <p>HTML, CSS, JavaScript, dan ?.</p>
+      <p>HTML, CSS, JavaScript, dan ?.</p>
+      <p>HTML, CSS, JavaScript, dan ?.</p>
+      <p>HTML, CSS, JavaScript, dan ?.</p>
+      <p>HTML, CSS, JavaScript, dan ?.</p>
+      <p>HTML, CSS, JavaScript, dan ?.</p>
+      <p>HTML, CSS, JavaScript, dan ?.</p>
+      <p>HTML, CSS, JavaScript, dan ?.</p>
+      <p>HTML, CSS, JavaScript, dan ?.</p>
+      <p>HTML, CSS, JavaScript, dan ?.</p><br>
+      <p>Maaf kalo terlalu panjang, biar kelihatan pergantian navbarnya:D</p>
+    </section>
 
-        <!-- video (gk kepakai)-->
-        <section class="flex justify-center mb-12" data-aos="zoom-in">
-            <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-        </section>-->
+    <section id="kontak" class="section-card p-6 mb-12" data-aos="fade-up">
+      <h2 class="flex items-center gap-3 text-2xl font-semibold gold-gradient-text mb-4"><i data-feather="mail"></i>
+        Kontak</h2>
+      <p>Email: fredy@example.com</p>
+      <p>Telepon: +62 999-9999-9999</p><br>
+      <p>Email: fredy@example.com</p>
+      <p>Telepon: +62 999-9999-9999</p><br>
+      <p>Email: fredy@example.com</p>
+      <p>Telepon: +62 999-9999-9999</p><br>
+      <p>Email: fredy@example.com</p>
+      <p>Telepon: +62 999-9999-9999</p><br>
+      <p>Email: fredy@example.com</p>
+      <p>Telepon: +62 999-9999-9999</p><br>
+      <p>Email: fredy@example.com</p>
+      <p>Telepon: +62 999-9999-9999</p><br>
+      <p>Email: fredy@example.com</p>
+      <p>Telepon: +62 999-9999-9999</p><br>
+      <p>Email: fredy@example.com</p>
+      <p>Telepon: +62 999-9999-9999</p><br>
+      <p>Email: fredy@example.com</p>
+      <p>Telepon: +62 999-9999-9999</p><br>
+      <p>Email: fredy@example.com</p>
+      <p>Telepon: +62 999-9999-9999</p><br>
+      <p>Email: fredy@example.com</p>
+      <p>Telepon: +62 999-9999-9999</p><br>
+      <p>Maaf kalo terlalu panjang, biar kelihatan pergantian navbarnya:D</p>
+    </section>
 
-            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-            <script src="script.js"></script>
+    <section id="sosmed" class="section-card p-6 mb-12 text-center" data-aos="fade-up">
+      <h2 class="flex justify-center items-center gap-2 text-2xl font-semibold gold-gradient-text mb-6">
+        <i data-feather="share-2"></i>
+        Sosial Media
+      </h2>
+
+      <div class="flex justify-center flex-wrap gap-4">
+        <a href="https://facebook.com" class="social-btn">
+          <i data-feather="facebook" class="w-6 h-6 mb-2"></i>
+          <span>Facebook</span>
+        </a>
+
+        <a href="https://instagram.com" class="social-btn">
+          <i data-feather="instagram" class="w-6 h-6 mb-2"></i>
+          <span>Instagram</span>
+        </a>
+
+        <a href="https://github.com" class="social-btn">
+          <i data-feather="github" class="w-6 h-6 mb-2"></i>
+          <span>GitHub</span>
+        </a>
+
+        <a href="https://linkedin.com" class="social-btn">
+          <i data-feather="linkedin" class="w-6 h-6 mb-2"></i>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
-
-
-
